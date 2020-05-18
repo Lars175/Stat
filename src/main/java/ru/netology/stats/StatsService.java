@@ -2,7 +2,6 @@ package ru.netology.stats;
 
 public class StatsService {
 
-//    int[] sales = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     public long allSumSales(long[] sales) {
 
         long sum = 0;
