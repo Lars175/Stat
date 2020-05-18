@@ -2,29 +2,28 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public long allSumSales(long[] sales) {
+   public int allSumSales(int[] sales) {
 
-        long sum = 0;
-        for (long sale : sales) {
+        int sum = 0;
+        for (int sale : sales) {
             sum += sale;
         }
         return sum;
     }
 
-    public long averageAmount(long[] sales) {
+    public int averageAmount(int[] sales) {
 
-        StatsService service = new StatsService();
-        long averageSum = allSumSales(sales) / sales.length;
+       int sum = allSumSales(sales);
 
-        return averageSum;
+        return sum / sales.length;
     }
 
-    public long findMax(long[] sales) {
+    public int findMax(int[] sales) {
 
-        long maxSale  = sales[0];
-        long mothMaxSale = 0;
-        for (long i = 0;  i < sales.length; i++) {
-            long sale = sales[(int) i];
+        int maxSale  = sales[0];
+        int mothMaxSale = 0;
+        for (int i = 0;  i < sales.length; i++) {
+            int sale = sales[i];
             if (maxSale <= sale) {
                 maxSale = sale;
                 mothMaxSale = i + 1;
@@ -35,12 +34,12 @@ public class StatsService {
             }
 
 
-    public long findMin(long[] sales)  {
+    public int findMin(int[] sales)  {
 
-        long minSale = sales[0];
-        long mothMinSale = 0;
-        for (long i = 0;  i < sales.length; i++) {
-            long sale = sales[(int) i];
+        int minSale = sales[0];
+        int mothMinSale = 0;
+        for (int i = 0;  i < sales.length; i++) {
+            int sale = sales[i];
             if (minSale >= sale) {
                 minSale = sale;
                 mothMinSale = i + 1;
@@ -49,24 +48,24 @@ public class StatsService {
         return mothMinSale;
     }
 
-    public long saleBelowMiddle(long[] sales) {
+    public int saleBelowMiddle(int[] sales) {
 
         StatsService service = new StatsService();
 
-        long belowMiddle = 0;
-        for (long sale : sales) {
+        int belowMiddle = 0;
+        for (int sale : sales) {
             if (service.averageAmount(sales) < sale)
-                belowMiddle += 1;
+                belowMiddle++;
         }
         return belowMiddle;
     }
 
-    public long saleAboveMiddle(long[] sales) {
+    public int saleAboveMiddle(int[] sales) {
         StatsService service = new StatsService();
-        long aboveMiddle = 0;
-        for (long sale : sales) {
+        int aboveMiddle = 0;
+        for (int sale : sales) {
             if (service.averageAmount(sales) > sale)
-                aboveMiddle += 1;
+                aboveMiddle++;
         }
         return aboveMiddle;
     }
