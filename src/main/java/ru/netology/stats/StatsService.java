@@ -50,7 +50,7 @@ public class StatsService {
         return mothMinSale;
     }
 
-    public long belowMiddleSale(long[] sales) {
+    public long saleBelowMiddle(long[] sales) {
 
         StatsService service = new StatsService();
 
@@ -62,7 +62,7 @@ public class StatsService {
         return belowMiddle;
     }
 
-    public long aboveMiddleSale(long[] sales) {
+    public long saleAboveMiddle(long[] sales) {
         StatsService service = new StatsService();
         long aboveMiddle = 0;
         for (long sale : sales) {

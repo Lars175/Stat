@@ -55,22 +55,22 @@ class StatsServiceTest {
 
     @Test
 //    Кол-во месяцев, в которых продажи были ниже среднего
-    void shouldCalculateBelowMiddleSale() {
+    void shouldCalculateSaleBelowMiddle() {
         StatsService service = new StatsService();
 
         long expected = 5;
-        long actual = service.belowMiddleSale(sales);
+        long actual = service.saleBelowMiddle(sales);
 
         assertEquals(expected, actual);
     }
 
     @Test
 //    Кол-во месяцев, в которых продажи были выше среднего
-    void shouldCalculateAboveMiddleSale() {
+    void shouldCalculateSaleAboveMiddle() {
         StatsService service = new StatsService();
 
         long expected = 5;
-        long actual = service.aboveMiddleSale(sales);
+        long actual = service.saleAboveMiddle(sales);
 
         assertEquals(expected, actual);
     }
