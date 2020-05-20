@@ -2,7 +2,6 @@ package ru.netology.stats;
 
 public class StatsService {
 
-
     public int allSumSales(int[] sales) {
 
         int sum = 0;
@@ -19,6 +18,7 @@ public class StatsService {
         return sum / sales.length;
     }
 
+
     public int findMax(int[] sales) {
 
         int maxSale  = sales[0];
@@ -30,7 +30,6 @@ public class StatsService {
                 mothMaxSale = i + 1;
             }
         }
-
         return mothMaxSale;
             }
 
@@ -52,10 +51,11 @@ public class StatsService {
     public int saleBelowMiddle(int[] sales) {
 
         StatsService service = new StatsService();
+        int sum = service.averageAmount(sales);
 
         int belowMiddle = 0;
         for (int sale : sales) {
-            if (service.averageAmount(sales) < sale)
+            if (sum < sale)
                 belowMiddle++;
         }
         return belowMiddle;
@@ -63,11 +63,14 @@ public class StatsService {
 
     public int saleAboveMiddle(int[] sales) {
         StatsService service = new StatsService();
+        int sum = service.averageAmount(sales);
+
         int aboveMiddle = 0;
         for (int sale : sales) {
-            if (service.averageAmount(sales) > sale)
+            if (sum > sale)
                 aboveMiddle++;
         }
         return aboveMiddle;
     }
+
 }
